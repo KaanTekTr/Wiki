@@ -1,0 +1,33 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create New Entry
+{% endblock %}
+
+{% block body %}
+
+    <h1 style="margin-top: 10px; margin-left: 10px;">Create New Entry</h1>
+
+    <form action="{% url 'new' %}" method="POST">
+
+        {% csrf_token %}
+
+        <div>
+            <input style="margin-top: 10px; margin-left: 10px; width: 700px;" type="text" placeholder="Title" name="title">
+        </div>
+        
+        <div>       
+             <textarea style="height: 300px; width: 700px; margin-top: 10px; margin-left: 10px;" name="content" id="" cols="1" rows="1" placeholder="Content"></textarea>
+        </div>
+
+        <div>
+            <button style="margin-top: 10px; margin-left: 10px;" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+    </form>
+
+
+
+{% endblock %}
+
+

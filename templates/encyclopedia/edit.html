@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{item_name}}/Edit
+{% endblock %}
+
+{% block body %}
+    <h3 style="margin-left: 10px;" >Edit Entry</h3>
+
+    <form action="/wiki/{{ item_name }}/edit" method="POST">
+        {% csrf_token %}
+
+        <textarea style="height: 300px; width: 700px; margin-top: 10px; margin-left: 10px;" name="content" id="" cols="1" rows="1">{{ item_content }}</textarea>
+        <div>        
+            <button style="margin-top: 10px; margin-left: 10px;" type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+    </form>
+{% endblock %}

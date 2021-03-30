@@ -1,0 +1,9 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia/Error
+{% endblock %}
+
+{% block body %}
+    <h3>The entry "{{ name | safe }}" already exists</h3>
+{% endblock %}
